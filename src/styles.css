@@ -32,11 +32,32 @@ main {
 
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
 }
 
 article {
   border: 1px solid #ddd;
+  border-radius: 8px;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+article h2 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+article a {
+  margin-top: auto;
+  text-decoration: none;
+  color: #007bff;
 }
