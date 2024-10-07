@@ -19,7 +19,7 @@ export class ArticleGridComponent implements OnInit {
   ngOnInit() {
     this.newsService.getTopHeadlines(this.category).subscribe(
       (response: any) => {
-        this.articles = response.articles;
+        this.articles = response.articles.slice(0, 5); // Limit to 5 articles
       },
       (error) => {
         console.error('Error fetching news:', error);
