@@ -1,8 +1,11 @@
 <div class="article-grid">
-  <article *ngFor="let article of articles">
+  <article *ngFor="let article of articles.slice(0, 5); let i = index" [class]="'article-' + (i + 1)">
     <img [src]="article.urlToImage" alt="{{ article.title }}" *ngIf="article.urlToImage">
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.description }}</p>
-    <a [href]="article.url" target="_blank">Read more</a>
+    <div class="article-content">
+      <h2>{{ article.title }}</h2>
+      <p class="description">{{ article.description }}</p>
+      <p class="content">{{ article.content }}</p>
+      <a [href]="article.url" target="_blank">Read more</a>
+    </div>
   </article>
 </div>
