@@ -1,11 +1,8 @@
 <div class="article-grid">
-  <article>
-    <h2>Sample Article 1</h2>
-    <p>This is a brief description of the article...</p>
-    <h2>testing</h2>
-  </article>
-  <article>
-    <h2>Sample Article 2</h2>
-    <p>This is a brief description of the article...</p>
+  <article *ngFor="let article of articles">
+    <img [src]="article.urlToImage" alt="{{ article.title }}" *ngIf="article.urlToImage">
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.description }}</p>
+    <a [href]="article.url" target="_blank">Read more</a>
   </article>
 </div>
